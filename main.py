@@ -24,6 +24,7 @@ password = input('Enter your password : ')
 for i in credentials:
     if i['username'] == username and i['password'] == password:
         print('Login Successful !')
+        count += 1
         a = input('Do you want to deposit, withdraw or view balance : ')
         if a == 'deposit':
             amount = int(input('Enter the amount to deposit : '))
@@ -44,8 +45,6 @@ for i in credentials:
             for a in accounts:
                 if a['username'] == username:
                     print(a['amount'])
-    else:
-        count += 1
 
-if count == 2:
+if not count == 1:
     print('Invalid credentials')
